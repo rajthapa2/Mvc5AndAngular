@@ -1,0 +1,5 @@
+C:\Dev\Katas\mvcAndAngular\Todo.Web.Model\bin\Debug\Todo.Web.Model.dll
+C:\Dev\Katas\mvcAndAngular\Todo.Web.Model\bin\Debug\Todo.Web.Model.pdb
+C:\Dev\Katas\mvcAndAngular\Todo.Web.Model\obj\Debug\todo.Web.Model.csprojResolveAssemblyReference.cache
+C:\Dev\Katas\mvcAndAngular\Todo.Web.Model\obj\Debug\Todo.Web.Model.dll
+C:\Dev\Katas\mvcAndAngular\Todo.Web.Model\obj\Debug\Todo.Web.Model.pdb
