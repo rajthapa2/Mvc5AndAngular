@@ -36,10 +36,10 @@ namespace todo.web.Controllers.api
         public void Delete(int id)
         {
         }
-        [HttpGet]
-        public void Add(Todo todo)
+        [HttpPost]
+        public Todo Add(Todo todo)
         {
-            
+            return todo;
         }
     }
 }

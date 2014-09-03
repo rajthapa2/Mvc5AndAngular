@@ -3,14 +3,20 @@
 
     function addTodo(todo) {
         var request = $http({
-            method: "addToDo",
+            method: "post",
             url: "/api/todoApi/Add",
-            params: {
-                action: "Add",
-            },
             data: {
-                todo: todo
+                Todo: todo
             }
         });
+        return (request.then(handleSuccess, handleError));
+    }
+
+    function handleSuccess(response) {
+        return (response.data);
+    }
+
+    function handleError(response) {
+        console.log(response);
     }
 });
