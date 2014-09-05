@@ -1,4 +1,0 @@
-C:\Dev\Katas\mvcAndAngular\Todo.Web.Model\bin\Release\Todo.Web.Model.dll
-C:\Dev\Katas\mvcAndAngular\Todo.Web.Model\bin\Release\Todo.Web.Model.pdb
-C:\Dev\Katas\mvcAndAngular\Todo.Web.Model\obj\Release\Todo.Web.Model.dll
-C:\Dev\Katas\mvcAndAngular\Todo.Web.Model\obj\Release\Todo.Web.Model.pdb
