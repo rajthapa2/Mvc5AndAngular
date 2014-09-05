@@ -1,5 +1,5 @@
-/[Tt]odo.web/bin/*.*
-/[Tt]odo.Web.Model.bin/*.*
+/[Tt]odo.web/bin/*
+/[Tt]odo.Web.Model.bin/*
 
 [Oo]bj/
 [Bb]in/
@@ -17,7 +17,7 @@ TestResults/
 *.DotSettings
 buildInfo/*
 TestResults/
-
+todo.web/obj/Debug/*
 # Created by http://www.gitignore.io
 
 ### Windows ###
