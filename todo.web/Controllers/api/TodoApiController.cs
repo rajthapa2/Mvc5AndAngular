@@ -1,25 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
+using MongoDB.Bson;
+using MongoDB.Driver;
+using MongoDB.Driver.Builders;
 using todo.Web.Model;
+using MongoDB.Driver.Linq;
 
 namespace todo.web.Controllers.api
 {
     public class TodoApiController : ApiController
     {
         // GET api/todoapi
-        public IEnumerable<string> Get()
+        public IEnumerable<Todo> Get()
         {
-            return new string[] { "value1", "value2" };
-        }
+         
+            const string connectionString = "mongodb://localhost";
+            var client = new MongoClient(connectionString);
+            var server = client.GetServer();
+            var database = server.GetDatabase("todoDB");
+            var collection = database.GetCollection<Todo>("todos");
 
-        // GET api/todoapi/5
-        public string Get(int id)
-        {
-            return "value";
+            var result = collection.FindAllAs<Todo>()
+                .SetFields(Fields.Exclude("_id")).ToList();
+
+            return result;
         }
 
         // POST api/todoapi
@@ -39,6 +44,14 @@ namespace todo.web.Controllers.api
         [HttpPost]
         public Todo Add(Todo todo)
         {
+            const string connectionString = "mongodb://localhost";
+            var client = new MongoClient(connectionString);
+            var server = client.GetServer();
+            var database = server.GetDatabase("todoDB");
+            var collection = database.GetCollection<Todo>("todos");
+
+            var query = from e in collection.AsQueryable<Todo>() select e;
+            var todos = query.ToList();
             return todo;
         }
     }
