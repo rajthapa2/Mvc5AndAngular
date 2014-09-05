@@ -42,7 +42,7 @@ namespace todo.web.Controllers.api
         {
         }
         [HttpPost]
-        public Todo Add(Todo todo)
+        public string Add(Todo todo)
         {
             const string connectionString = "mongodb://localhost";
             var client = new MongoClient(connectionString);
@@ -50,9 +50,11 @@ namespace todo.web.Controllers.api
             var database = server.GetDatabase("todoDB");
             var collection = database.GetCollection<Todo>("todos");
 
-            var query = from e in collection.AsQueryable<Todo>() select e;
-            var todos = query.ToList();
-            return todo;
+            collection.Insert(todo);
+
+//            var query = from e in collection.AsQueryable<Todo>() select e;
+//            var todos = query.ToList();
+            return "done";
         }
     }
 }

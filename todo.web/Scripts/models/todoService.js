@@ -10,7 +10,8 @@
             method: "post",
             url: "/api/todoApi/Add",
             data: {
-                Todo: todo
+                Done: todo.Id,
+                Text: todo.Text
             }
         });
         return (request.then(handleSuccess, handleError));

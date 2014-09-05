@@ -1,6 +1,23 @@
 /[Tt]odo.web/bin/*.*
 /[Tt]odo.Web.Model.bin/*.*
 
+[Oo]bj/
+[Bb]in/
+_ReSharper.*
+*.ReSharper.user
+dist/
+logs/
+*.log
+*.suo
+*.user
+*.pp
+reports/
+buildOutput/*
+TestResults/
+*.DotSettings
+buildInfo/*
+TestResults/
+
 # Created by http://www.gitignore.io
 
 ### Windows ###
