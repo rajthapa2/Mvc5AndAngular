@@ -2,6 +2,8 @@
 /[Tt]odo.Web.Model.bin/*
 todo.web/bin/*
 todo.web/obj/*
+todo.web\obj\Debug\*
+
 
 
 [Oo]bj/
