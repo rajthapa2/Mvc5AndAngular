@@ -17,6 +17,7 @@ TestResults/
 *.DotSettings
 buildInfo/*
 TestResults/
+todo.web/obj/Debug/*
 todo.web/obj/Debug/*.*
 todo.web/obj/Debug/todo.Web.csprojResolveAssemblyReference.cache
 
