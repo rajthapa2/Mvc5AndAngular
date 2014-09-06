@@ -3,7 +3,7 @@
 todo.web/bin/*
 todo.web/obj/*
 todo.web\obj\Debug\*
-
+Tests\Properties\AssemblyInfo.cs
 todo.web\ObjDebug\todo.Web.csproj.FileListAbsolute.txt
 
 

@@ -16,12 +16,12 @@
         loadRemoteData();
         $scope.formNewTodoTask = "";
 
-        $scope.addTodo = function () {
+        $scope.addTodo = function() {
             var newtodo = {
                 Done: true,
                 Text: $scope.formNewTodoTask
             };
             todoService.addTodo(newtodo);
-        }
+        };
     }
 );

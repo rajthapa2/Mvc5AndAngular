@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Fri Sep 05 2014 13:55:20 GMT+0100 (GMT Daylight Time)
+// Generated on Sat Sep 06 2014 23:23:49 GMT+0100 (GMT Daylight Time)
 
 module.exports = function(config) {
   config.set({
@@ -15,25 +15,28 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+	//libs
       'todo.web/Scripts/libs/jquery-1.10.2.js',
       'todo.web/Scripts/libs/jquery.validate.js',
       'todo.web/Scripts/libs/bootstrap.js',
-	  'todo.web/Scripts/libs/angular/*.js',
+      'todo.web/Scripts/libs/angular/angular.js',
+	  'Tests/JasmineTests/Support/*.js',
+	// models
       'todo.web/Scripts/models/*.js',
-
-       ],
+	  
+	// specs  
+	'Tests/JasmineTests/Specs/*.js'
+    ],
 
 
     // list of files to exclude
     exclude: [
-      'todo.web/Scripts/bootstrap.min.js',
     ],
 
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-    
     },
 
 
