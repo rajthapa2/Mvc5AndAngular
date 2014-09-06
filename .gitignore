@@ -4,6 +4,8 @@ todo.web/bin/*
 todo.web/obj/*
 todo.web\obj\Debug\*
 
+todo.web\ObjDebug\todo.Web.csproj.FileListAbsolute.txt
+
 
 
 [Oo]bj/
