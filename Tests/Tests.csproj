@@ -39,9 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Folder Include="Properties\" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="JasmineTests\Specs\TodoSpec.js" />
     <Content Include="JasmineTests\Support\angular-mocks.js" />

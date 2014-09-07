@@ -11,7 +11,7 @@
         }));
 
         it('should have the total todoes in the array', function () {
-            expect(scope.todos.length).toBe(0);
+            expect(scope.todoes.length).toBe(0);
         });
     });
 });
