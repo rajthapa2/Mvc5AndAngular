@@ -10,8 +10,17 @@
             });
         }));
 
-        it('should have the total todoes in the array', function () {
-            expect(scope.todoes.length).toBe(0);
+        describe("todoes", function () {
+            it('should have the total todoes in the array', function () {
+                expect(scope.todoes.length).toBe(0);
+            });
+        });
+        
+        describe("addToDo", function() {
+
+            it('should call addTodo in service layer', function () {
+               
+            });
         });
     });
 });
