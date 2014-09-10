@@ -2,6 +2,8 @@
     function ($scope, todoService) {
 
         $scope.todoes = [];
+        $scope.ShowErrorMessage = false;
+
 
         function applyRemoteData(newTodoes) {
             $scope.todoes = newTodoes;
@@ -17,11 +19,18 @@
         $scope.formNewTodoTask = "";
 
         $scope.addTodo = function() {
-            var newtodo = {
-                Done: true,
-                Text: $scope.formNewTodoTask
+            if ($scope.formNewTodoTask == "") {
+                $scope.ShowErrorMessage = true;
+                return;
+            } else {
+                var newtodo = {
+                    Done: true,
+                    Text: $scope.formNewTodoTask
+                };
+                $scope.todoes.push(newtodo);
+                todoService.addTodo(newtodo);
+                $scope.ShowErrorMessage = false;
             };
-            todoService.addTodo(newtodo);
-        };
+        }
     }
 );

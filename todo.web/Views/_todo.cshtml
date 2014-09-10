@@ -14,5 +14,6 @@
     <form action="/" method="post">
         <input type="text" ng-model= "formNewTodoTask" />
         <input type="button" class="btn-success" name="Submit" ng-click="addTodo()" value="Sumbit" />
+        <p class="text-warning" ng-show="ShowErrorMessage == true">Please enter a name</p>
     </form>
 </div>

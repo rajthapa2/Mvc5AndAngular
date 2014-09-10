@@ -1,13 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "todo.Web", "todo.web\todo.Web.csproj", "{428A2100-4341-4771-B836-54E862521919}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "todo.Web.Model", "Todo.Web.Model\todo.Web.Model.csproj", "{E64E8944-3465-4758-9CED-10E13AB99425}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{E5CD8492-6EDD-4AC4-ADF5-14DD950F63CA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{17CB9EFE-7DD1-4D4E-ABB6-C8DC83AD2385}"
+	ProjectSection(SolutionItems) = preProject
+		karma.conf.js = karma.conf.js
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
