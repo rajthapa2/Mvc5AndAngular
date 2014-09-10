@@ -1,7 +1,8 @@
 ﻿app.service("todoService", function ($http, $q) {
     return ({
         addTodo: addTodo,
-        getTodos: getTodos
+        getTodos: getTodos,
+        removeTodo: removeTodo,
     }
     );
 
@@ -10,7 +11,7 @@
             method: "post",
             url: "/api/todoApi/Add",
             data: {
-                Done: todo.Id,
+                Done: todo.Done,
                 Text: todo.Text
             }
         });
@@ -22,16 +23,19 @@
             method: "get",
             url: "/api/todoApi/Get",
         });
-       return (request.then(getSuccess, getError));
+        return (request.then(handleSuccess, handleError));
     }
 
-    function getSuccess(response) {
-        console.log(response);
-        return response.data;
-    }
-
-    function getError() {
-        
+    function removeTodo(todo) {
+        var request = $http({
+            method: "post",
+            url: "api/todoApi/Delete",
+            data: {
+                Done:todo.Done,
+                Text: todo.Text
+            }
+        });
+        return ((request).then(handleSuccess, handleError));
     }
 
     function handleSuccess(response) {

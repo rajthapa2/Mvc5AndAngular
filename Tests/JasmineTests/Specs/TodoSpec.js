@@ -23,7 +23,7 @@
         });
         
         describe("addToDo", function() {
-            it('should call addTodo in service layer', function () {
+            it('should call addTodo in todoService', function () {
                 scope.formNewTodoTask = "new Todo";
                 scope.addTodo();
                 expect(mockedTodoService.addTodo).toHaveBeenCalled();
@@ -59,6 +59,14 @@
                 scope.formNewTodoTask = "abc";
                 scope.addTodo();
                 expect(scope.ShowErrorMessage).toBe(false);
+            });
+        });
+
+        describe("removeTodo", function() {
+            it('should call removeTodo in todoService', function () {
+                spyOn(mockedTodoService, 'removeTodo');
+                scope.removeTodo();
+                expect(mockedTodoService.removeTodo).toHaveBeenCalled();
             });
         });
     });

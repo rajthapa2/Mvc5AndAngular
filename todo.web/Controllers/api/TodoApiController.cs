@@ -38,7 +38,7 @@ namespace todo.web.Controllers.api
         }
 
         // DELETE api/todoapi/5
-        public void Delete(int id)
+        public void Delete(Todo todo)
         {
         }
         [HttpPost]

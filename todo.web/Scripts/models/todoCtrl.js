@@ -32,5 +32,9 @@
                 $scope.ShowErrorMessage = false;
             };
         }
+
+        $scope.removeTodo= function(todo) {
+            todoService.removeTodo(todo);
+        }
     }
 );
