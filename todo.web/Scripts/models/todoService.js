@@ -1,4 +1,4 @@
-﻿app.service("todoService", function ($http, $q) {
+﻿app.service("todoService", function ($http) {
     return ({
         addTodo: addTodo,
         getTodos: getTodos,
@@ -26,7 +26,7 @@
         return (request.then(handleSuccess, handleError));
     }
 
-    function removeTodo(todo) {
+    function removeTodo(idx, todo, handleRemoveSuccess) {
         var request = $http({
             method: "post",
             url: "api/todoApi/Delete",
@@ -35,7 +35,7 @@
                 Text: todo.Text
             }
         });
-        return ((request).then(handleSuccess, handleError));
+        return ((request).then(handleRemoveSuccess(idx), handleError));
     }
 
     function handleSuccess(response) {

@@ -4,7 +4,6 @@
         $scope.todoes = [];
         $scope.ShowErrorMessage = false;
 
-
         function applyRemoteData(newTodoes) {
             $scope.todoes = newTodoes;
         }
@@ -30,11 +29,17 @@
                 $scope.todoes.push(newtodo);
                 todoService.addTodo(newtodo);
                 $scope.ShowErrorMessage = false;
+                $scope.formNewTodoTask = "";
             };
         }
 
-        $scope.removeTodo= function(todo) {
-            todoService.removeTodo(todo);
+        $scope.removeTodo= function(index, todo) {
+            todoService.removeTodo(index, todo, handleRemoveSuccess);
         }
+
+        function handleRemoveSuccess(index) {
+            $scope.todoes.splice(index, 1);
+        }
+
     }
 );

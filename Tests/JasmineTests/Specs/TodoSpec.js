@@ -60,6 +60,11 @@
                 scope.addTodo();
                 expect(scope.ShowErrorMessage).toBe(false);
             });
+            it('should clear the textbox after adding new todo', function() {
+                scope.formNewTodoTask = "new todo1";
+                scope.addTodo();
+                expect(scope.formNewTodoTask).toBe("");
+            });
         });
 
         describe("removeTodo", function() {

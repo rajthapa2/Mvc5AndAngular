@@ -1,11 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
-using MongoDB.Bson;
 using MongoDB.Driver;
 using MongoDB.Driver.Builders;
 using todo.Web.Model;
-using MongoDB.Driver.Linq;
 
 namespace todo.web.Controllers.api
 {
@@ -14,17 +12,21 @@ namespace todo.web.Controllers.api
         // GET api/todoapi
         public IEnumerable<Todo> Get()
         {
-         
+            var collection = MongoCollection();
+
+            var result = collection.FindAllAs<Todo>().SetFields(Fields.Exclude("_id")).ToList();
+
+            return result;
+        }
+
+        private static MongoCollection<Todo> MongoCollection()
+        {
             const string connectionString = "mongodb://localhost";
             var client = new MongoClient(connectionString);
             var server = client.GetServer();
             var database = server.GetDatabase("todoDB");
             var collection = database.GetCollection<Todo>("todos");
-
-            var result = collection.FindAllAs<Todo>()
-                .SetFields(Fields.Exclude("_id")).ToList();
-
-            return result;
+            return collection;
         }
 
         // POST api/todoapi
@@ -38,9 +40,16 @@ namespace todo.web.Controllers.api
         }
 
         // DELETE api/todoapi/5
-        public void Delete(Todo todo)
+        [HttpPost]
+        public string Delete(Todo todo)
         {
+            var collection = MongoCollection();
+            var bulk = collection.InitializeOrderedBulkOperation();
+            bulk.Find(Query.EQ("Text", todo.Text)).RemoveOne();
+            bulk.Execute();
+            return "done";
         }
+
         [HttpPost]
         public string Add(Todo todo)
         {
@@ -51,9 +60,6 @@ namespace todo.web.Controllers.api
             var collection = database.GetCollection<Todo>("todos");
 
             collection.Insert(todo);
-
-//            var query = from e in collection.AsQueryable<Todo>() select e;
-//            var todos = query.ToList();
             return "done";
         }
     }

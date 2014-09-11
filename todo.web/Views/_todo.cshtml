@@ -8,6 +8,7 @@
         <li ng-repeat="todo in todoes">
             <input ng-model="todo.Done" type="checkbox" name="name" value=" " />
             <span>{{todo.Text}}</span>
+            <span ng-click="removeTodo($index, todo)" class="glyphicon glyphicon-remove"></span>
         </li>
     </ul>
     
