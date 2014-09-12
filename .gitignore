@@ -7,7 +7,8 @@ Tests\Properties\AssemblyInfo.cs
 todo.web\ObjDebug\todo.Web.csproj.FileListAbsolute.txt
 todo.web\obj\Debug\*.*
 
-
+/coverage
+/Coverage
 
 
 [Oo]bj/
