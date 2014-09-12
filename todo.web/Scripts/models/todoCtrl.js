@@ -37,6 +37,10 @@
             todoService.removeTodo(index, todo, handleRemoveSuccess);
         }
 
+        $scope.updateTodo = function(index, todo) {
+            todoService.updateTodo(index, todo);
+        };
+
         function handleRemoveSuccess(index) {
             $scope.todoes.splice(index, 1);
         }

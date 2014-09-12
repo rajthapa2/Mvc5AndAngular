@@ -42,7 +42,7 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="JasmineTests\Specs\TodoSpec.js" />
+    <Content Include="JasmineTests\Specs\TodoCtrlSpec.js" />
     <Content Include="JasmineTests\Support\angular-mocks.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

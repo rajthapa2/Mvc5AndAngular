@@ -3,6 +3,7 @@
         addTodo: addTodo,
         getTodos: getTodos,
         removeTodo: removeTodo,
+        updateTodo: updateTodo
     }
     );
 
@@ -26,7 +27,7 @@
         return (request.then(handleSuccess, handleError));
     }
 
-    function removeTodo(idx, todo, handleRemoveSuccess) {
+    function removeTodo(index, todo, handleRemoveSuccess) {
         var request = $http({
             method: "post",
             url: "api/todoApi/Delete",
@@ -35,7 +36,19 @@
                 Text: todo.Text
             }
         });
-        return ((request).then(handleRemoveSuccess(idx), handleError));
+        return ((request).then(handleRemoveSuccess(index), handleError));
+    }
+
+    function updateTodo(index, todo) {
+        var request = $http({
+            method: 'post',
+            url: 'api/todoApi/Put',
+            data: {
+                Done: todo.Done,
+                Text: todo.Text
+            }
+        });
+        return ((request).then(handleSuccess, handleError));
     }
 
     function handleSuccess(response) {

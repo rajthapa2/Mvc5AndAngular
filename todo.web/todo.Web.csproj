@@ -133,9 +133,9 @@
     <Content Include="Scripts\libs\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\libs\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\libs\modernizr-2.6.2.js" />
-    <Content Include="Scripts\models\app.js" />
-    <Content Include="Scripts\models\todoCtrl.js" />
-    <Content Include="Scripts\models\todoService.js" />
+    <Content Include="Scripts\models\App.js" />
+    <Content Include="Scripts\models\TodoCtrl.js" />
+    <Content Include="Scripts\models\TodoService.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

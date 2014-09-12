@@ -28,7 +28,6 @@ module.exports = function(config) {
 	'Tests/JasmineTests/Specs/*.js'
     ],
 
-
     // list of files to exclude
     exclude: [
     ],

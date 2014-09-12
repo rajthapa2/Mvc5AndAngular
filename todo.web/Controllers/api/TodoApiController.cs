@@ -12,14 +12,14 @@ namespace todo.web.Controllers.api
         // GET api/todoapi
         public IEnumerable<Todo> Get()
         {
-            var collection = MongoCollection();
+            var collection = GetCollection();
 
             var result = collection.FindAllAs<Todo>().SetFields(Fields.Exclude("_id")).ToList();
 
             return result;
         }
 
-        private static MongoCollection<Todo> MongoCollection()
+        private static MongoCollection<Todo> GetCollection()
         {
             const string connectionString = "mongodb://localhost";
             var client = new MongoClient(connectionString);
@@ -35,15 +35,19 @@ namespace todo.web.Controllers.api
         }
 
         // PUT api/todoapi/5
-        public void Put(int id, [FromBody]string value)
+        [HttpPost]
+        public string Put(Todo todo)
         {
+            var collection = GetCollection();
+            collection.Update(Query.EQ("Text", todo.Text), Update<Todo>.Set(x=>x.Done, todo.Done));
+            return "done";
         }
 
         // DELETE api/todoapi/5
         [HttpPost]
         public string Delete(Todo todo)
         {
-            var collection = MongoCollection();
+            var collection = GetCollection();
             var bulk = collection.InitializeOrderedBulkOperation();
             bulk.Find(Query.EQ("Text", todo.Text)).RemoveOne();
             bulk.Execute();

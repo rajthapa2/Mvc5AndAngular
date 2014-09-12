@@ -74,5 +74,21 @@
                 expect(mockedTodoService.removeTodo).toHaveBeenCalled();
             });
         });
+
+        describe("updateTodo", function() {
+            it('should update the todo', function () {
+                spyOn(mockedTodoService, 'updateTodo');
+                scope.updateTodo();
+                expect(mockedTodoService.updateTodo).toHaveBeenCalled();
+            });
+
+//            it('should only call the update in todoService if the todo1 status is different', function() {
+//                spyOn(mockedTodoService, 'updateTodo');
+//                var todo1 = {Done: false, Text: "todoText1"}
+//                scope.todoes.push(todo1);
+//                scope.updateTodo();
+//
+//            });
+        });
     });
 });
